@@ -1,0 +1,181 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdlib.h>
+#include <conio.h>
+#include <string.h>
+#include <time.h>
+#include <stdio.h>
+#include <windows.h>
+
+char * random_string(int length) {
+	const char charset[] = "abcdefghijklmnopqrstuvwxyz";
+	char *rs = malloc(length + 1);
+
+	if (length) {
+		if (rs) {
+			int l = (int)(sizeof(charset) - 1);
+			int key;
+			for (int n = 0; n < length; n++) {
+				key = rand() % l;
+				rs[n] = charset[key];
+			}
+
+			rs[length] = '\0';
+		}
+	}
+
+	return rs;
+}
+
+struct book {
+	int birthyear;
+	char title[20];
+	char author[40];
+	char genre[20];
+	char description[40];
+}
+
+
+
+main() {
+
+	int * p = malloc(100 * sizeof(struct book));
+	struct book books[2];
+	int i = 0;
+	books[0].birthyear = 1937;
+	strcpy(books[0].title, random_string(6));
+	strcpy(books[0].author, random_string(5));
+	strcpy(books[0].genre, random_string(5));
+	strcpy(books[0].description, random_string(6));
+	while(i < 100) {
+		
+		printf("title: %d\n ", books[i].birthyear);
+		printf("author: %s\n ", books[i].title);
+		printf("author: %s\n ", books[i].author);
+		printf("genre: %s\n ", books[i].genre);
+		printf("description: %s\n ", books[i].description);
+		
+	}
+	getchar();
+}
+	   
+
+	//for (int i = 0; i < 100; i++)
+	//{
+	//	printf("%x %d - %x %d\n", &p[i], &p[i], p[i], p[i]);
+	//}
+	//struct student students[2];
+
+	//char * names[] = { "as", "asd" };
+
+	//students[0].age = 32;
+	//strcpy(students[0].name, "Nika");
+	//strcpy(students[0].lastname, "Nikabadze");
+
+
+	//students[1].age = 33;
+	//strcpy(students[1].name, "David");
+	//strcpy(students[1].lastname, "Gagua");
+
+	//for (int i = 0; i < 2; i++)
+	//{
+	//	printf("age: %d\n", students[i].age);
+	//	printf("name: %s\n", students[i].name);
+	//	printf("lastname: %s\n", students[i].lastname);
+
+	//}
+
+	//printf("age: %d\n", s1.age);
+	//printf("name: %s\n", s1.name);
+	//printf("lastname: %s\n", s1.lastname);
+
+	//printf("\n");
+
+	//printf("age: %d\n", s2.age);
+	//printf("name: %s\n", s2.name);
+	//printf("lastname: %s\n", s2.lastname);
+
+	//struct student students[100];
+	//students[0].age = 15;
+
+	//struct student s = { 16, "David", "Kobakhidze" };
+
+	//struct student *pst = &s;
+
+	//s.age = 17;
+
+	//printf("age: %d\n", s.age);
+
+	//printf("\n");
+
+	//struct student *sp = (struct student*)malloc(100 * sizeof(struct student));
+	//sp->age = 18;
+	//strcpy(sp->name, "Giorgi");
+	//strcpy(sp->lastname, "Burdiladze");
+
+	//printf("age: %d\n", sp->age);
+	//printf("name: %s\n", sp->name);
+	//printf("lastname: %s\n", sp->lastname);
+
+	//printf("\n");
+
+	////sp++;
+
+	//(sp + 1)->age = 19;
+	//strcpy((sp + 1)->name, "Nikoloz");
+	//strcpy((sp + 1)->lastname, "Varamashvili");
+
+	//printf("age: %d\n", (sp + 1)->age);
+	//printf("name: %s\n", (sp + 1)->name);
+	//printf("lastname: %s\n", (sp + 1)->lastname);
+
+	//printf("\n");
+
+	//printf("size: %d\n", sizeof(struct student));
+/*
+	int m[20][20];*/
+
+	//for (int i = 0; i < 20; i++) {
+	//	for (int j = 0; j < 20; j++) {
+	//		m[i][j] = i + j;//rand()%100;
+	//		printf("%02d ", m[i][j]);
+	//	}
+	//	printf("\n");
+	//}
+
+	//printf("\n");
+
+//	for (int i = 0; i < 400; i++) {
+//		m[i / 20][i % 20] = 0;
+//		printf("%02d ", m[i / 20][i % 20]);
+//		if (i % 20 == 0 && i > 0) {
+//			printf("\n");
+//		}
+//	}
+//
+//
+//	/*for (int i = 0; i < 20; i++) {
+//	for (int j = 0; j < 20; j++) {
+//	printf("%02d ", m[i][j]);
+//	}
+//	printf("\n");
+//	}
+//	*/
+//	getchar();
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// shemqenit structura romelic iqneba wignis agweris! gamoshvebis weli, satauri , janri , avtori , 
